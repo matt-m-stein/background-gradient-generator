@@ -2,6 +2,7 @@ const direction = document.getElementById('direction');
 const firstColor = document.getElementById('first-color');
 const secondColor = document.getElementById('second-color');
 const switchIcon = document.getElementById('switch-icon');
+const nav = document.querySelector('nav');
 
 console.log(direction);
 console.log(firstColor);
@@ -10,28 +11,29 @@ console.log(switchIcon);
 
 let menuDisplay = true;
 
-let dir = '0deg';
-let color1 = "#888888";
-let color2 = "#ffffff"
+let dir = '90deg';
+let color1 = "#7be383";
+let color2 = "#5cf2de";
 
 switchIcon.addEventListener('click', () => {
     if (menuDisplay) {
         switchIcon.classList.remove('fa-bars');
         switchIcon.classList.add('fa-xmark');
+        nav.classList.add('hidden');
         menuDisplay = !menuDisplay;
     } else {
         switchIcon.classList.remove('fa-xmark');
         switchIcon.classList.add('fa-bars');
+        nav.classList.remove('hidden');
         menuDisplay = !menuDisplay;
     }
 });
 
-function changeBackground(dir, color1, color2) {
-    document.body.style.backgroundImage = `linear-gradient(${dir}, ${color1}, ${color2})`;
-    document.querySelector('nav').classList.toggle('hide');
+function changeBackground(dir, mainColor, secondColor) {
+    document.body.style.backgroundImage = `linear-gradient(${dir}, ${mainColor}, ${secondColor})`;
+    direction.style.borderColor = mainColor;
+    direction.style.backgroundColor = secondColor;
 }
-
-changeBackground(dir, color1, color2);
 
 firstColor.addEventListener('change', (event) => {
     color1 = event.target.value;
@@ -46,4 +48,8 @@ secondColor.addEventListener('change', (event) => {
 direction.addEventListener('input', (event) => {
     dir = `${event.target.value}deg`;
     changeBackground(dir, color1, color2);
-})
+});
+
+changeBackground(dir, color1, color2);
+firstColor.value = color1;
+secondColor.value = color2;
