@@ -27,7 +27,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 22.5rem;
+    width: 25rem;
     background-color: #333;
     border: 5px solid #111;
     margin-left: 2.5rem;
@@ -39,9 +39,12 @@ nav {
 }
 
 #switch-icon {
-    position: absolute;
     right: 2.5rem;
     top: 2.5rem;
+    position: absolute;
+}
+
+i {
     padding: 2.5rem;
     background-color: #333;
     color: #eee;
@@ -50,6 +53,11 @@ nav {
     border: 5px solid #eee;
     font-size: 7.5rem;
     transition: all 0.6s;
+}
+
+#btn {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
 
 input {
@@ -64,11 +72,11 @@ input[type=number] {
     appearance: textfield;
 }
 
-#first-color,
-#second-color {
+input.swatch {
     width: 15rem;
     height: 7.5rem;
     border-color: #111;
+    margin: 8px 0;
 }
 
 #direction {
@@ -92,4 +100,22 @@ input[type=number] {
     background-color: #eee;
     color: #111;
     border-color: #111;
+}
+
+#btn:hover i {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+#swatch-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: fit-content;
+    flex: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 5px solid #fff;
+    border-radius: 15px;
 }
