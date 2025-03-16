@@ -89,12 +89,52 @@ colors.forEach((color, index) => {
     addToEachSwatch(color, index);
 });
 
+function createSwatchContainer(color) {
+    const container = document.createElement('div');
+    container.classList.add('swatch-container');
+    const deleteBtn = document.createElement('i');
+    deleteBtn.className = 'fa-solid fa-trash';
+    const swatchElement = createColorSwatchesElements(color);
+    const clipboardBtn = document.createElement('i');
+    clipboardBtn.className = 'fa-solid fa-clipboard';
+    container.appendChild(deleteBtn);
+    container.appendChild(swatchElement);
+    container.appendChild(clipboardBtn);
+
+    return {
+        contents: container,
+        swatch: swatchElement,
+        delete: deleteBtn,
+        copy: clipboardBtn
+    }
+}
+
+
 function addToEachSwatch(color, index) {
-    swatchElement = createColorSwatchesElements(color);
-    swatchElement.addEventListener('change', (event) => {
+    const cont = createSwatchContainer(color);
+    console.log(cont);
+    cont.swatch.addEventListener('change', (event) => {
         colors[index] = event.target.value;
         changeBackground(dir, colors);
     });
+    swatchContainer.appendChild(cont.contents);
+    
+    cont.delete.addEventListener('click', (event) => {
+        event.target.parentElement.remove();
+        delete colors[index];
+        changeBackground(dir, colors);
+    });
+
+    cont.copy.addEventListener('click', (event) => {
+        const color = event.target.previousSibling.value;
+        const textarea = document.createElement('textarea');
+        textarea.value = color;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        console.log(textarea);
+        textarea.remove();
+    })
 }
 
 button.addEventListener('click', () =>{
