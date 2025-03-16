@@ -11,6 +11,7 @@ This simple web app makes it easy to design 2 color gradient backgrounds.
 [X] - Design it so you can remove swatches
 [X] - Implement copy color to clipboard functionality
 [ ] - Make it so you can choose between radial and linear gradient
+[ ] - Make a button to copy the whole linear gradient to clipboard
 [ ] - Design an animation for toggling the nav menu
 [ ] - Polish and publish
 

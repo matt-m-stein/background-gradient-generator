@@ -46,19 +46,21 @@ nav {
 
 #btn,
 #switch-icon {
-    padding: 2.5rem;
     background-color: #333;
     color: #eee;
     width: fit-content;
+    height: fit-content;
     border-radius: 1.5rem;
-    border: 5px solid #eee;
     font-size: 7.5rem;
     transition: all 0.6s;
+    padding: 2.5rem;
+    border: 5px solid #eee;
 }
 
 #btn {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
+    background-color: #333;
+    color: #eee;
+    border-width: 5px;
 }
 
 input {
@@ -100,12 +102,12 @@ input.swatch {
 #switch-icon.fa-xmark {
     background-color: #eee;
     color: #111;
-    border-color: #111;
+    border-color: black;
 }
 
-#btn:hover i {
-    background-color: white;
-    color: black;
+#btn:hover {
+    background-color: #eee;
+    color: #333;
     border-color: black;
     cursor: pointer;
 }
@@ -137,7 +139,7 @@ input.swatch {
     transition: all 0.6s;
 }
 
-.swatch-container:hover i {
+.swatch-container i:hover {
     color: black;
     background-color: white;
     padding: 15px;
