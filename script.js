@@ -5,6 +5,7 @@ const switchIcon = document.getElementById('switch-icon');
 const swatchContainer = document.getElementById('swatch-container');
 const nav = document.querySelector('nav');
 const button = document.getElementById('btn');
+const copyButton = document.getElementById('copy-button');
 
 console.log(direction);
 
@@ -127,13 +128,7 @@ function addToEachSwatch(color, index) {
 
     cont.copy.addEventListener('click', (event) => {
         const color = event.target.previousSibling.value;
-        const textarea = document.createElement('textarea');
-        textarea.value = color;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        console.log(textarea);
-        textarea.remove();
+        copyToClipboard(color);
     })
 }
 
@@ -144,4 +139,20 @@ button.addEventListener('click', () =>{
     addToEachSwatch(colors[colors.length - 1], colors.length - 1);
     
     changeBackground(dir, colors);
+});
+
+function copyToClipboard(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    console.log(textarea);
+    textarea.remove();
+}
+
+copyButton.addEventListener('click', (event) => {
+    const outputText = document.body.style.backgroundImage;
+    copyToClipboard(outputText);
+    console.log(outputText);
 });

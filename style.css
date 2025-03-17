@@ -45,7 +45,8 @@ nav {
 }
 
 #btn,
-#switch-icon {
+#switch-icon,
+#copy-button {
     background-color: #333;
     color: #eee;
     width: fit-content;
@@ -55,9 +56,11 @@ nav {
     transition: all 0.6s;
     padding: 2.5rem;
     border: 5px solid #eee;
+    margin: 0 10px;
 }
 
-#btn {
+#btn,
+#copy-button {
     background-color: #333;
     color: #eee;
     border-width: 5px;
@@ -105,7 +108,8 @@ input.swatch {
     border-color: black;
 }
 
-#btn:hover {
+#btn:hover,
+#copy-button:hover {
     background-color: #eee;
     color: #333;
     border-color: black;

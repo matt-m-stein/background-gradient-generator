@@ -17,9 +17,9 @@ This simple web app makes it easy to design 2 color gradient backgrounds.
 [X] - Implement copy color to clipboard
 functionality
 
-[ ] - Make it so you can choose between radial and linear gradient
+[X] - Make a button to copy the whole linear gradient to clipboard
 
-[ ] - Make a button to copy the whole linear gradient to clipboard
+[ ] - Make it so you can choose between radial and linear gradient
 
 [ ] - Design an animation for toggling the nav menu
 
