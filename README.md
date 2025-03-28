@@ -21,7 +21,7 @@ functionality
 
 [X] - Design an animation for toggling the nav menu
 
-[ ] - Implement local storage
+[X] - Implement local storage
 
 [ ] - Polish and publish
 

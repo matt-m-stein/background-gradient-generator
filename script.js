@@ -11,12 +11,10 @@ const gradientSelector = document.getElementById("gradient-selector");
 
 console.log(direction);
 
-// console.log(switchIcon);
-console.log(swatchContainer);
-
 let menuDisplay = true;
 
-let colors = ["#95e989", "#50f3f3", "#f2ed84"];
+let colors = [];
+const defaultColors = ["#95e989", "#50f3f3", "#f2ed84"];
 
 let dir = "90deg";
 let gradientType = "linear";
@@ -64,6 +62,7 @@ function changeBackground(dir, swatchesColors) {
   console.log(gradient);
 
   document.body.style.backgroundImage = gradient;
+  saveToLocalStorage(swatchesColors);
   // direction.style.borderColor = mainColor;
   // direction.style.backgroundColor = secondColor;
 }
@@ -83,7 +82,7 @@ direction.addEventListener("input", (event) => {
   changeBackground(dir, colors);
 });
 
-changeBackground(dir, colors);
+//changeBackground(dir, colors);
 
 function createColorSwatchesElements(color) {
   const swatch = document.createElement(`input`);
@@ -93,10 +92,6 @@ function createColorSwatchesElements(color) {
   swatchContainer.appendChild(swatch);
   return swatch;
 }
-
-colors.forEach((color, index) => {
-  addToEachSwatch(color, index);
-});
 
 function createSwatchContainer(color) {
   const container = document.createElement("div");
@@ -169,3 +164,36 @@ copyButton.addEventListener("click", (event) => {
 //   gradientType = event.target.value;
 //   changeBackground(dir, colors);
 // });
+
+function saveToLocalStorage(data) {
+  const toStorage = JSON.stringify(data);
+  console.log("Save To Local Storage");
+  console.log(toStorage);
+  localStorage.setItem("colors", toStorage);
+}
+
+function getFromLocalStorage() {
+  const data = JSON.parse(localStorage.getItem("colors"));
+
+  if (data.length > 0) {
+    return data;
+  } else {
+    return defaultColors;
+  }
+}
+
+function startScript() {
+  colors = getFromLocalStorage();
+
+  if (colors.length <= 0) {
+    colors = defaultColors;
+  }
+
+  colors.forEach((color, index) => {
+    addToEachSwatch(color, index);
+  });
+
+  changeBackground(dir, colors);
+}
+
+startScript();
