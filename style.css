@@ -40,14 +40,14 @@ nav {
 
 .icons {
   position: fixed;
-  right: 5%;
+  right: 2.5%;
   top: 5%;
   width: 125px;
   height: 125px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .icons i {
@@ -57,21 +57,24 @@ nav {
 .icons i.fa-bars {
   left: 0;
 }
-
+/* 
 .icons.toggle i {
   transform: translateX(-100%);
-}
+} */
 
 .icons.toggle i.fa-bars {
   opacity: 0;
+  transform: translateX(-100%) scale(0);
 }
 
 .icons i.fa-xmark {
   opacity: 0;
+  transform: translateX(0) scale(0);
 }
 
 .icons.toggle i.fa-xmark {
   opacity: 1;
+  transform: translateX(-100%) scale(1);
 }
 
 /* #switch-icon::before {

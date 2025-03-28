@@ -16,7 +16,7 @@ console.log(swatchContainer);
 
 let menuDisplay = true;
 
-let colors = ["#99e98d", "#42f0db", "#f2ed84"];
+let colors = ["#99e98d", "#50f3f3", "#f2ed84"];
 
 let dir = "90deg";
 let gradientType = "linear";
