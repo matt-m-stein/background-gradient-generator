@@ -1,37 +1,43 @@
 const direction = document.getElementById("direction");
 // const firstColor = document.getElementById('first-color');
 // const secondColor = document.getElementById('second-color');
-const switchIcon = document.getElementById("switch-icon");
+// const switchIcon = document.getElementById("switch-icon");
+const icons = document.getElementById("icons");
 const swatchContainer = document.getElementById("swatch-container");
 const nav = document.querySelector("nav");
 const button = document.getElementById("btn");
 const copyButton = document.getElementById("copy-button");
+const gradientSelector = document.getElementById("gradient-selector");
 
 console.log(direction);
 
-console.log(switchIcon);
+// console.log(switchIcon);
 console.log(swatchContainer);
 
 let menuDisplay = true;
 
-let colors = ["#7be383", "#5cf2de", "#ffffff"];
+let colors = ["#99e98d", "#42f0db", "#f2ed84"];
 
 let dir = "90deg";
+let gradientType = "linear";
 let color1 = "#7be383";
 let color2 = "#5cf2de";
 
-switchIcon.addEventListener("click", () => {
-  if (menuDisplay) {
-    switchIcon.classList.remove("fa-bars");
-    switchIcon.classList.add("fa-xmark");
-    nav.classList.add("hidden");
-    menuDisplay = !menuDisplay;
-  } else {
-    switchIcon.classList.remove("fa-xmark");
-    switchIcon.classList.add("fa-bars");
-    nav.classList.remove("hidden");
-    menuDisplay = !menuDisplay;
-  }
+icons.addEventListener("click", () => {
+  nav.classList.toggle("hidden");
+  icons.classList.toggle("toggle");
+  // if (menuDisplay) {
+  //   // switchIcon.classList.remove("fa-bars");
+  //   // switchIcon.classList.add("fa-xmark");
+  //   icons.classList.toggle('toggle');
+  //   nav.classList.add("hidden");
+  //   menuDisplay = !menuDisplay;
+  // } else {
+  //   // switchIcon.classList.remove("fa-xmark");
+  //   // switchIcon.classList.add("fa-bars");
+  //   nav.classList.remove("hidden");
+  //   menuDisplay = !menuDisplay;
+  // }
 });
 
 /* function changeBackground(dir, mainColor, secondColor) {
@@ -42,6 +48,12 @@ switchIcon.addEventListener("click", () => {
 
 function changeBackground(dir, swatchesColors) {
   let gradient = `linear-gradient(${dir}`;
+  // console.log(gradientType);
+  // if (gradientType == "linear") {
+  //   gradient =
+  // } else {
+  //   gradient = `radial-gradient(center to center`;
+  // }
 
   swatchesColors.forEach((color) => {
     gradient += `, ${color}`;
@@ -152,3 +164,8 @@ copyButton.addEventListener("click", (event) => {
   copyToClipboard(outputText);
   console.log(outputText);
 });
+
+// gradientSelector.addEventListener("change", (event) => {
+//   gradientType = event.target.value;
+//   changeBackground(dir, colors);
+// });

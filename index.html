@@ -15,22 +15,22 @@
   </head>
   <body>
     <nav>
-      <input id="direction" type="number" />
-      <div id="swatch-container">
-        <!--        <div class="color-container">
-                <i class="fa-solid fa-trash"></i>
-                <input id="first-color" type="color">
-                <i class="fa-solid fa-clipboard"></i>
-            </div>
-            <input id="second-color" type="color"> -->
-      </div>
+      <input id="direction" type="number" placeholder="0...360" />
+      <!-- <select name="gradient-type" id="gradient-selector">
+        <option value="linear">Linear Gradient</option>
+        <option value="radial">Radial Gradient</option>
+      </select> -->
+      <div id="swatch-container"></div>
       <div class="button-container">
         <i id="copy-button" class="fa-solid fa-copy"></i>
         <i id="btn" class="fa-solid fa-square-plus"></i>
       </div>
     </nav>
 
-    <i id="switch-icon" class="fa-solid fa-bars"></i>
+    <div id="icons" class="icons">
+      <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-xmark"></i>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

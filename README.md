@@ -19,9 +19,7 @@ functionality
 
 [X] - Make a button to copy the whole linear gradient to clipboard
 
-[ ] - Make it so you can choose between radial and linear gradient
-
-[ ] - Design an animation for toggling the nav menu
+[X] - Design an animation for toggling the nav menu
 
 [ ] - Polish and publish
 
