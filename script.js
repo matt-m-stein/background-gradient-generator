@@ -175,7 +175,9 @@ function saveToLocalStorage(data) {
 function getFromLocalStorage() {
   const data = JSON.parse(localStorage.getItem("colors"));
 
-  if (data.length > 0) {
+  if (data == null) {
+    return defaultColors;
+  } else if (data.length > 0) {
     return data;
   } else {
     return defaultColors;
