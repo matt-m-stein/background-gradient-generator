@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap"); */
 body {
-  font-family: "Doto", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   background-image: linear-gradient(
     90deg,
     rgb(153, 233, 141),
@@ -120,6 +120,7 @@ input {
   border-style: solid;
   border-radius: 1.5rem;
   text-align: center;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 input[type="number"] {
@@ -129,9 +130,9 @@ input[type="number"] {
 }
 
 input::placeholder {
-  font-family: "Doto", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: bold;
-  color: black;
+  color: #333;
 }
 
 input.swatch {
@@ -144,9 +145,9 @@ input.swatch {
 #direction {
   width: 15rem;
   border-color: white;
-  font-size: 3.25rem;
-  font-weight: 600;
-  padding: 0.5rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  padding: 0.325rem;
 }
 
 #direction,
