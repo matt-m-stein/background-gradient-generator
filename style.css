@@ -40,7 +40,7 @@ nav {
   padding: 25px;
   gap: 3rem;
   border-radius: 1.5rem;
-  transition: all 0.6s;
+  transition: all 0.75s;
 }
 
 .icons {
@@ -52,6 +52,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
   /* overflow: hidden; */
 }
 
@@ -140,6 +141,7 @@ input.swatch {
   height: 7.5rem;
   border-color: #111;
   margin: 8px 0;
+  cursor: pointer;
 }
 
 #direction {
@@ -155,7 +157,7 @@ input.swatch {
   outline: none;
 }
 
-.hidden {
+nav.hidden {
   left: 0;
   transform: translateX(-125%);
 }
@@ -206,4 +208,16 @@ input.swatch {
   background-color: white;
   padding: 15px;
   border-radius: 15px;
+}
+
+.swatch-container i.fa-clipboard {
+  cursor: copy;
+}
+
+.swatch-container .fa-trash {
+  cursor: not-allowed;
+}
+
+.button-container #copy-button {
+  cursor: copy;
 }
