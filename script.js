@@ -113,6 +113,18 @@ function createSwatchContainer(color) {
   };
 }
 
+function removeColor(index) {
+  let tempColorArray = [];
+  colors.forEach((color, i) => {
+    if (i != index) {
+      tempColorArray.push(color);
+    }
+  });
+  colors = tempColorArray;
+  console.log("Removed colors");
+  console.log(tempColorArray);
+}
+
 function addToEachSwatch(color, index) {
   const cont = createSwatchContainer(color);
   console.log(cont);
@@ -124,7 +136,7 @@ function addToEachSwatch(color, index) {
 
   cont.delete.addEventListener("click", (event) => {
     event.target.parentElement.remove();
-    delete colors[index];
+    removeColor(index);
     changeBackground(dir, colors);
   });
 
@@ -178,7 +190,14 @@ function getFromLocalStorage() {
   if (data == null) {
     return defaultColors;
   } else if (data.length > 0) {
-    return data;
+    let notNullData = [];
+    data.forEach((item, index) => {
+      if (item != null) {
+        notNullData.push(item);
+      }
+    });
+
+    return notNullData;
   } else {
     return defaultColors;
   }
