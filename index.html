@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Include Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -10,23 +12,26 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link rel="stylesheet" href="style.css" />
     <title>Background Generator</title>
   </head>
   <body>
     <nav>
+      <!-- The angle input -->
       <input id="direction" type="number" placeholder="0-360" />
-      <!-- <select name="gradient-type" id="gradient-selector">
-        <option value="linear">Linear Gradient</option>
-        <option value="radial">Radial Gradient</option>
-      </select> -->
+
+      <!-- Container to hold all the swatches -->
       <div id="swatch-container"></div>
+
+      <!-- Holds both the menu on the left bottom button's -->
       <div class="button-container">
         <i id="copy-button" class="fa-solid fa-copy"></i>
         <i id="btn" class="fa-solid fa-square-plus"></i>
       </div>
     </nav>
 
+    <!-- The div containing the icons at the top right -->
     <div id="icons" class="icons">
       <i class="fa-solid fa-bars"></i>
       <i class="fa-solid fa-xmark"></i>
